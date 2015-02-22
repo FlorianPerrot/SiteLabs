@@ -26,6 +26,13 @@
   -o-backface-visibility: $back-visi_arg
   -ms-backface-visibility: $back-visi_arg
 
+=box-shadow($shadow_arg)
+  -moz-box-shadow: $shadow_arg
+  -webkit-box-shadow: $shadow_arg
+  -o-box-shadow: $shadow_arg
+  -ms-shadow: $shadow_arg
+  box-shadow: $shadow_arg
+
 =smartphone-media()
   @media only screen and (max-width: $smartphone)
     @content

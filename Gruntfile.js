@@ -7,7 +7,7 @@ module.exports = function(grunt) {
             dist: {
                 options: {
                     style: 'compressed',
-                    sourcemap: 'none',
+                    sourcemap: 'auto',
                     update: true
                 },
                 files: {
@@ -39,13 +39,14 @@ module.exports = function(grunt) {
                 files: '*.html',
             },
             styles: {
-                files: ['assets/sass/*.sass', "index.html"],
+                files: ['assets/**/*.sass'],
                 tasks: ['sass:dist'],
             },
+            /*
             scripts: {
                 files: ['assets/js/myscript.js', 'assets/js/canvas_menu.js'],
                 tasks: ['concat:dist'],
-            },
+            },*/
             options: {
                 livereload: true
             }

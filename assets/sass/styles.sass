@@ -2,63 +2,7 @@
 @import "color"
 @import "mixin"
 
-#menu
-	//POSITION
-	position: absolute
-	top: 0
-	left: 0
+@import "menu"
 
-	//DECO
-	border-radius: 0 0 200% 0
-	background-color: rgba(235,235,235,1)
-	overflow: hidden
-	
-	//SIZE
-	width: 75px
-	height: 75px
-	padding: 0 25px 25px 0
-
-	//ANIM
-	+transition(width 1s, height 1s)
-
-	#arrow
-		//POSITION
-		position: absolute
-		top: 0
-		left: 0
-		display: block
-
-		cursor: pointer
-
-		//SIZE
-		font-size: 52px
-		width: 70px
-		height: 70px
-
-		//ANIM
-		+transition(all 1s)
-		+transform(rotate(135deg))
-
-	#items-menu
-		text-align: center
-		margin: 75px auto
-		display: none
-
-		li
-			margin-top: 20px
-
-.menu-big
-	width: 500px !important
-	height: 500px !important
-	+tablette-media()
-		width: 345px !important
-		height: 345px !important
-	+smartphone-media()
-		width: 295px !important
-		height: 295px !important
-
-	#arrow
-		+transform(rotate(-45deg) !important)
-
-	#items-menu
-		display: block !important
+body
+	font-family: Arial
