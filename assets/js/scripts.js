@@ -1,5 +1,5 @@
 $(function () {
-	$('#menu').click(function(){
-		$(this).toggleClass('menu-big');
+	$('#arrow').click(function(){
+		$("#menu").toggleClass('menu-big');
 	});
 });
