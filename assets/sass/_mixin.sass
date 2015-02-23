@@ -5,20 +5,6 @@
   -o-user-select: none
   user-select: none
 
-=transform($transf_arg...)
-  transform: $transf_arg
-  -webkit-transform: $transf_arg
-  -moz-transform: $transf_arg
-  -o-transform: $transf_arg
-  -ms-transform: $transf_arg
-
-=transition($transi_args...)
-  transition: $transi_args
-  -webkit-transition: $transi_args
-  -moz-transition: $transi_args
-  -o-transition: $transi_args
-  -ms-transition: $transi_args
-
 =backface-visibility($back-visi_arg)
   backface-visibility: $back-visi_arg
   -webkit-backface-visibility: $back-visi_arg
@@ -33,6 +19,13 @@
   -ms-shadow: $shadow_arg
   box-shadow: $shadow_arg
 
+=background-gradient($gradient_args...)
+  background: -moz-linear-gradient($gradient_args)
+  background: -o-linear-gradient($gradient_args)
+  background: -webkit-linear-gradient($gradient_args)
+  background: -ms-linear-gradient($gradient_args)
+  background: linear-gradient($gradient_args)
+
 =smartphone-media()
   @media only screen and (max-width: $smartphone)
     @content
@@ -44,3 +37,36 @@
 =smalldesktop-media()
   @media only screen and (min-width: $smalldesktop)
     @content
+
+
+//ANIMATIONS ET TRANSITIONS
+=transform($transf_arg...)
+  transform: $transf_arg
+  -webkit-transform: $transf_arg
+  -moz-transform: $transf_arg
+  -o-transform: $transf_arg
+  -ms-transform: $transf_arg
+
+=transition($transi_args...)
+  transition: $transi_args
+  -webkit-transition: $transi_args
+  -moz-transition: $transi_args
+  -o-transition: $transi_args
+  -ms-transition: $transi_args
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
+=animation($animation_arg)
+  -moz-animation: $animation_arg
+  -webkit-animation: $animation_arg
+  -ms-animation: $animation_arg
+  -o-animation: $animation_arg
+  animation: $animation_arg

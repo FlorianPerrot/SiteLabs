@@ -1,3 +1,14 @@
+//ANIMATIONS
++keyframes(hover-menu)
+	0%
+		background: #000000
+	50%
+		+background-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.3), rgba(0,0,0,0))
+	100%
+		background: #000000
+
+		
+
 #menu
 	//POSITION
 	position: absolute
@@ -47,11 +58,25 @@
 			margin-top: 40px
 
 			a
+				position: relative
 				margin: 0 -7px
 				padding-bottom: 3px
-				border-bottom: 1px solid #C7C7D0
 				text-decoration: none
 				color: black
+
+			a:after
+				position: absolute
+				content: ""
+				border-radius: 2px
+				background: black
+				top: 90%
+				left: -10%
+				width: 120%
+				height: 10%
+
+			a:hover:after
+				+animation(hover-menu 2s infinite cubic-bezier(.19,.63,.79,.37))
+
 
 .menu-big
 	width: 500px !important
